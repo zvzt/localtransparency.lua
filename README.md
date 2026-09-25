@@ -16,16 +16,22 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzt/localtransparenc
 
 ## Features
 
-- Local-only body transparency
-- Adjustable transparency slider
-- On/off toggle
-- Reanimation-aware character detection
-- Automatic cleanup when the UI is closed
-- Draggable interface
+- Local-only body transparency using `LocalTransparencyModifier`
+- Adjustable 0–100% transparency slider
+- Active/Disabled switch in the header
+- Reanimation-aware character and camera-subject detection
+- Event-driven transparency enforcement instead of a permanent render-step loop
+- Automatic restoration when disabled or closed
+- Rerun-safe cleanup
+- Onyx-style draggable interface
+- Header-only minimize/restore behavior
+- Screen-edge drag clamping with `-57 / 57` vertical offsets
 
 ## Notes
 
-The script changes `LocalTransparencyModifier`, so the visual effect is local to your client rather than a server-side character change.
+The visual effect is local to your client rather than a server-side character change. The HumanoidRootPart remains locally hidden while the feature is active.
+
+A synchronized deployment copy is maintained in `zxt.lol/public/reanimtrasparent.lua`.
 
 ## Files
 

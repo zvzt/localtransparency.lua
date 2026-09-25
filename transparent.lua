@@ -264,8 +264,10 @@ local function makeDraggable(handle,target)
 		local delta=input.Position-dragStart
 		local size=target.AbsoluteSize
 		local viewport=cam.ViewportSize
+		local topOffset=-57
+		local bottomOffset=57
 		local x=math.clamp(startPos.X+delta.X,0,math.max(0,viewport.X-size.X))
-		local y=math.clamp(startPos.Y+delta.Y,-57,math.max(-57,viewport.Y-size.Y-57))
+		local y=math.clamp(startPos.Y+delta.Y,topOffset,math.max(topOffset,viewport.Y-size.Y-bottomOffset))
 		target.Position=UDim2.fromOffset(x,y)
 	end)
 
